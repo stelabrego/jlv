@@ -1,0 +1,15 @@
+language: python
+sudo: true
+dist: xenial
+python:
+- '3.7'
+script:
+- python -m unittest -v jlv/test.py
+#Kept getting authentication failures
+deploy:
+  provider: pypi
+  user: stel_abr
+  password:
+    secure: "VnsIgx4z6oIAqXog6gQRPW/xy6T4b98NXVlu27VOATqrWIFL+TibSNbs48fZm5RYOy/JWDChWfjJaO8AdhW2L2O/xilPWnr5ZMH1PojO1mZk5sBWAUfbtujfSSw1kTq+todcDLtALLPJhjrngUOxomuqmRIXTAhrw9ExnJA6jEQjrHQo4Eb2E/ayaoJFnm4K2gxBffC75giSHjcTsGyZEBwpc4yRgG44U0oqGn8LZZLjTr/EjNfNJaJBRAtrads0SrnAZRYJSDjMPihgojXYXkbEXKLNgWliFQ6Pg1DI+nvx62P54ego8vdYJKwZuv2sExjrrk1+xg4cHsz+xgEh9fiK6TSTl638aZc9urnUHky2zctalWiFWmKv3X7Ye/XtqAU3XGMACWjWM7WvIlGtELYkileLWoh9c5aQbX4X4kzKMcW5aALctP8SBDDBGqZriKANHvcEaaGGPu9BnQY1idcwKg8P/1ZEwt9c5X6kLzg8vWXIrMTB/VYBwWCWGie5nSVq8NXMMbuwdYkyueujPGiyeVQMCkpBrh0l5vP51+5s23pBYDcob7VXNpChEvoLkEArTuQ0HQmuIWZBvLQcowWbyYXnxa3L+h+m6h3nS1N7tE89wwvi4ZVTWNfGY6a1D0ITpifHxCOlOqvx2Sb7sQ5CleCmr0SdygWd3DTUEjU="
+  on:
+    tags: true
